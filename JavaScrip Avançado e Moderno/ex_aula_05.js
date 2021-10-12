@@ -15,7 +15,7 @@ const p2 = _ =>
 const p3 = _ =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve('P3 resolve')
+      reject('P3 reject')
     }, 3000)
   })
 
