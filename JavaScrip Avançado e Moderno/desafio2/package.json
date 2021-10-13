@@ -1,0 +1,14 @@
+{
+  "name": "desafio2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Paulo Hernane",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-json-modules main.js"
+  },
+  "dependencies": {
+    "date-fns": "^2.25.0"
+  }
+}

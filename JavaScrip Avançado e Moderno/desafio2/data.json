@@ -1,0 +1,12 @@
+{
+  "clients": [
+    { "id": 1, "name": "Érico" },
+    { "id": 2, "name": "Juca" }
+  ],
+  "purchases": [
+    { "cliente_id": 1, "data": "11/04/2011", "total": 100.0 },
+    { "cliente_id": 2, "data": "11/03/2011", "total": 83.71 },
+    { "cliente_id": 2, "data": "08/02/2011", "total": 52.48 },
+    { "cliente_id": 1, "data": "20/04/2011", "total": 329.99 }
+  ]
+}
