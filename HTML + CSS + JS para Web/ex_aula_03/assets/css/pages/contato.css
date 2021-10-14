@@ -1,0 +1,21 @@
+@import '../main.css';
+
+form {
+  padding: 20px;
+  background-color: darkgray;
+  width: 380px;
+}
+
+form input {
+  margin: 15px 0;
+}
+
+form button {
+  width: 220px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: darkcyan;
+}
