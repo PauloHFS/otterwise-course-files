@@ -1,0 +1,15 @@
+form {
+  margin: 10vh 45vw;
+
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  align-items: center;
+}
+
+#historico {
+  display: flex;
+  flex-flow: column-reverse wrap;
+  align-content: center;
+  align-items: center;
+}
