@@ -18,11 +18,11 @@
 - [Desafio 2](https://github.com/PauloHFS/otterwise-course-files/tree/main/JavaScrip%20Avan%C3%A7ado%20e%20Moderno/desafio2)
 
 ### HTML + CSS + JS para Web
-- Aula 1 - Exercícios
-- Aula 2 - Exercícios
-- Aula 3 - Exercícios
-- Aula 4 - Exercícios
-- Aula 5 - Exercícios
+- Aula 1 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/blob/main/HTML%20%2B%20CSS%20%2B%20JS%20para%20Web/ex_aula_01.html)
+- Aula 2 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/HTML%20%2B%20CSS%20%2B%20JS%20para%20Web/ex_aula_02)
+- Aula 3 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/HTML%20%2B%20CSS%20%2B%20JS%20para%20Web/ex_aula_03)
+- Aula 4 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/HTML%20%2B%20CSS%20%2B%20JS%20para%20Web/ex_aula_04)
+- Aula 5 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/HTML%20%2B%20CSS%20%2B%20JS%20para%20Web/ex_aula_05)
 - Desafio
 
 ### React JS
