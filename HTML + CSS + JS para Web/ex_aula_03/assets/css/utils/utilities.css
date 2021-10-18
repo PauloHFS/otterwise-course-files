@@ -1,0 +1,9 @@
+.bg-antiquewhite-100 {
+  background-color: antiquewhite;
+}
+
+.title {
+  line-height: 18px;
+  font-weight: 14px;
+  color: darkcyan;
+}

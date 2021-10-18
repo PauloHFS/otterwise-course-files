@@ -1,0 +1,14 @@
+nav ul li {
+  margin: 20px 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+
+  text-align: center;
+
+  padding: 5px;
+
+  background-color: darkcyan;
+}

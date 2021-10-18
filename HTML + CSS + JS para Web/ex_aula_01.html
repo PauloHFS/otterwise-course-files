@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+  </head>
+  <body>
+    <header>
+      <h1>Formulário</h1>
+      <p>Formulário desenvolvido como exercicio da aula 1</p>
+    </header>
+    <section>
+      <form action="" method="get">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Nome" />
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" placeholder="E-mail" />
+        <label for="nascimento">Data de nascimento: </label>
+        <input type="date" name="nascimento" id="nascimento" />
+        <label for="language">Linguagem favorita:</label>
+        <input
+          type="radio"
+          name="language"
+          id="javascript"
+          value="javascript"
+        />
+        <label for="javascript">JavaScript</label>
+        <input type="radio" name="language" id="basic" value="basic" />
+        <label for="basic">Basic</label>
+        <input type="submit" value="Send" />
+      </form>
+    </section>
+  </body>
+</html>
