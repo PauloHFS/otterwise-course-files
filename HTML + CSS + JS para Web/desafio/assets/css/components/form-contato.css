@@ -32,6 +32,11 @@
   border-radius: 10px;
 }
 
+#button:hover,
+#button:focus {
+  background-color: #403423;
+}
+
 #message {
   height: 15vh;
 
@@ -43,4 +48,9 @@
 
   border: 1px solid black;
   border-radius: 10px;
+}
+
+.dados-contato:focus {
+  outline: 1px solid #bf9d69;
+  border: 1px solid #bf9d69;
 }
