@@ -1,5 +1,16 @@
+@media screen and (min-width: 768px) {
+  #form-contato {
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #form-contato {
+    width: 90vw;
+  }
+}
+
 #form-contato {
-  width: 90vw;
   height: auto;
 
   margin: 5vh 3vw;
@@ -50,7 +61,8 @@
   border-radius: 10px;
 }
 
-.dados-contato:focus {
+.dados-contato:focus,
+.dados-contato:hover {
   outline: 1px solid #bf9d69;
   border: 1px solid #bf9d69;
 }

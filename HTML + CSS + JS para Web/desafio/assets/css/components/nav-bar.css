@@ -34,6 +34,27 @@
 
 @media screen and (min-width: 768px) {
   #nav-bar {
-    display: block;
+    height: 75px;
+    margin: -75px 0 0 0;
+
+    background-color: #040404;
+    font-weight: 700;
+  }
+
+  #nav-bar ul {
+    display: flex;
+    justify-content: flex-end;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #nav-bar a {
+    margin: 0 5vw 0 0;
+
+    line-height: 75px;
+    text-decoration: none;
+    color: #ffd18d;
   }
 }
