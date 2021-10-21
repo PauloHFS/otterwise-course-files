@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <script src="./assets/js/main.js"></script>
+
+    <title>Desafio HTML e CSS</title>
+  </head>
+  <body>
+    <header>
+      <img src="./assets/images/brand-logo.png" alt="" id="brand-logo" />
+    </header>
+    <nav id="nav-bar">
+      <ul>
+        <li><a href="#galeria-section">Galeria</a></li>
+        <li><a href="#contato-section">Contatos</a></li>
+        <li><a href="#social">Social</a></li>
+      </ul>
+    </nav>
+    <section id="welcome-section">
+      <img src="./assets/images/background.png" alt="" />
+      <div>
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <p>consectetur adipiscing elit. Proin nec lacus sem.</p>
+      </div>
+    </section>
+    <section id="galeria-section">
+      <img src="./assets/images/cat_1 1.png" alt="" />
+      <img src="./assets/images/dog_1 1.png" alt="" />
+      <img src="./assets/images/cat_2 1.png" alt="" />
+      <img src="./assets/images/dog_2 1.png" alt="" />
+      <img src="./assets/images/cat_3 1.png" alt="" />
+      <img src="./assets/images/dog_3 1.png" alt="" />
+    </section>
+    <section id="contato-section">
+      <form
+        action="https://otterwise-fake-api.herokuapp.com/contact"
+        method="post"
+        id="form-contato"
+      >
+        <label for="name">Nome Completo</label>
+        <input type="text" name="name" id="name" class="dados-contato" />
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" class="dados-contato" />
+        <label for="phone">Telefone</label>
+        <input type="tel" name="phone" id="phone" class="dados-contato" />
+        <label for="message">Mensagem</label>
+        <textarea
+          name="message"
+          id="message"
+          class="dados-contato"
+          cols="30"
+          rows="10"
+        ></textarea>
+
+        <input type="submit" value="Enviar" id="button" />
+      </form>
+    </section>
+    <footer id="social">
+      <p>Direitos Resevados. 2021</p>
+    </footer>
+  </body>
+</html>

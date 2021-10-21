@@ -1,0 +1,11 @@
+header {
+  background-color: #040404;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#brand-logo {
+  margin: 1vh 0 1vh 10vw;
+}
