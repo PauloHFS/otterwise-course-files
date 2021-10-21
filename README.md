@@ -23,7 +23,7 @@
 - Aula 3 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/HTML%20%2B%20CSS%20%2B%20JS%20para%20Web/ex_aula_03)
 - Aula 4 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/HTML%20%2B%20CSS%20%2B%20JS%20para%20Web/ex_aula_04)
 - Aula 5 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/HTML%20%2B%20CSS%20%2B%20JS%20para%20Web/ex_aula_05)
-- Desafio
+- [Desafio](https://github.com/PauloHFS/otterwise-course-files/tree/main/HTML%20%2B%20CSS%20%2B%20JS%20para%20Web/desafio)
 
 ### React JS
 - Aula 1 - Exercícios
