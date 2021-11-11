@@ -96,7 +96,7 @@ const books = [
 ];
 
 //Autor do livro mais vendido;
-function getBookMaisVendido(books) {
+const getBookMaisVendido = books => {
   let indexBookMaisVendido = 0;
 
   for (let index = 1; index < books.length; index++) {
@@ -110,13 +110,13 @@ function getBookMaisVendido(books) {
   }
 
   return books[indexBookMaisVendido];
-}
+};
 
 console.table(getBookMaisVendido(books));
 //----------------------------------------------------------------
 
 //Filtrar livros que tem um preço abaixo do valor que será inserido;
-function getBooksUnder(price, books) {
+const getBooksUnder = (price, books) => {
   let booksUnderPriced = [];
 
   for (let index = 0; index < books.length; index++) {
@@ -126,13 +126,13 @@ function getBooksUnder(price, books) {
   }
 
   return booksUnderPriced;
-}
+};
 
 console.table(getBooksUnder(45, books));
 //----------------------------------------------------------------
 
 //Filtrar livros que tem um preço acima do valor que será inserido;
-function getBooksOver(price, books) {
+const getBooksOver = (price, books) => {
   let booksOverPriced = [];
 
   for (let index = 0; index < books.length; index++) {
@@ -142,13 +142,13 @@ function getBooksOver(price, books) {
   }
 
   return booksOverPriced;
-}
+};
 
 console.table(getBooksOver(45, books));
 //----------------------------------------------------------------
 
 //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-function getBookBy(atribute, value, books) {
+const getBookBy = (atribute, value, books) => {
   let book = {};
   for (let index = 0; index < books.length; index++) {
     if (books[index][atribute] == value) {
@@ -157,7 +157,7 @@ function getBookBy(atribute, value, books) {
     }
   }
   return book;
-}
+};
 //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 //Pesquisa pelo nome do livro;
@@ -178,8 +178,8 @@ console.table(books);
 
 //Top X livros mais vendidos (X será um valor inserido como entrada);
 
-function top(X, books) {
-  function bubbleSort(arr, atribute, comparador) {
+const top = (X, books) => {
+  const bubbleSort = (arr, atribute, comparador) => {
     hadSwap = true;
     while (hadSwap) {
       hadSwap = false;
@@ -191,7 +191,7 @@ function top(X, books) {
         }
       }
     }
-  }
+  };
 
   let booksOrdenadoVendas = [...books];
   bubbleSort(booksOrdenadoVendas, 'quantidadeVendido', (a, b) => a < b);
@@ -202,20 +202,20 @@ function top(X, books) {
   }
 
   return topBooks;
-}
+};
 
 console.table(top(3, books));
 //----------------------------------------------------------------
 
 //Aumento de X % no preço dos livros (X será um valor inserido como entrada).
-function changeBooksPriceIn(rate, books) {
+const changeBooksPriceIn = (rate, books) => {
   let fixedRate = rate / 100 + 1;
   let booksWithNewPrice = [...books];
   for (let index = 0; index < booksWithNewPrice.length; index++) {
     booksWithNewPrice[index].valor *= fixedRate;
   }
   return booksWithNewPrice;
-}
+};
 
 console.table(changeBooksPriceIn(100, books));
 //----------------------------------------------------------------
