@@ -1,9 +1,18 @@
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import { post } from '../services/posts';
 
+import { postSchema } from '../schemas/post.schema';
+
 const Form = () => {
-  const { handleSubmit, register } = useForm();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(postSchema),
+  });
 
   const onSubmit = async data => {
     try {
@@ -18,7 +27,11 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input type="text" {...register('title')} />
+      <br />
+      {errors.title?.message}
       <input type="text" {...register('description')} />
+      <br />
+      {errors.description?.message}
       <button type="submit">Postar</button>
     </form>
   );
