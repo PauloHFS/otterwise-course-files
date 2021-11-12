@@ -32,6 +32,7 @@ const Form = () => {
       <input type="text" {...register('description')} />
       <br />
       {errors.description?.message}
+      <br />
       <button type="submit">Postar</button>
     </form>
   );
