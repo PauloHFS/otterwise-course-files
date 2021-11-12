@@ -12,7 +12,7 @@ const printTabuada = (number, until = 10) => {
     divisao: (a, b) => `${a} / ${b} = ${a / b}`,
   };
 
-  console.log(`--- TABUADA DO ${number} ---`);
+  console.log(`\t--- TABUADA DO ${number} ---`);
   for (let i = 0; i < operacoes.length; i++) {
     console.log(`-- ${operacoes[i]} --`);
     for (let j = 0; j <= until; j++) {
