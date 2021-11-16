@@ -1,10 +1,16 @@
-import styled from 'styled-components'
-import { Button } from '@material-ui/core'
+import styled from 'styled-components';
+import { Button } from '@material-ui/core';
+
+import { useContext } from 'react';
+import { AuthContext } from '../context/authContext';
 
 function Tasks() {
+  const { singout } = useContext(AuthContext);
+
   const handleLogout = () => {
-    console.log('logout')
-  }
+    console.log('logout');
+    singout();
+  };
 
   return (
     <Container>
@@ -24,11 +30,11 @@ function Tasks() {
         dui et massa. Pellentesque aliquam urna in ante pretium, id tincidunt
         nisi fermentum.
       </p>
-      <Button onClick={handleLogout} variant='contained' color='primary'>
+      <Button onClick={handleLogout} variant="contained" color="primary">
         Sair
       </Button>
     </Container>
-  )
+  );
 }
 
 const Container = styled.div`
@@ -36,6 +42,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 
-export default Tasks
+export default Tasks;

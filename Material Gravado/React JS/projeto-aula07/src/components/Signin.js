@@ -1,33 +1,46 @@
-import { useForm, Controller } from 'react-hook-form'
-import styled from 'styled-components'
-import { TextField, Button } from '@material-ui/core'
-import { yupResolver } from '@hookform/resolvers/yup'
+import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
-import { signinSchema } from '../schemas/auth'
+import { useForm, Controller } from 'react-hook-form';
+import styled from 'styled-components';
+import { TextField, Button } from '@material-ui/core';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+import { signinSchema } from '../schemas/auth';
+
+import { AuthContext } from '../context/authContext';
 
 function Signin() {
+  let history = useHistory();
+
+  const { isAuthenticated, login } = useContext(AuthContext);
+
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(signinSchema),
-  })
+  });
 
-  const handleSignin = data => console.log('sigin: ', data)
+  const handleSignin = data => {
+    console.log('sigin: ', data);
+    login(data.email, data.password);
+    if (isAuthenticated) history.push('/dashboard');
+  };
 
   return (
     <Form onSubmit={handleSubmit(handleSignin)}>
       <Title>Login</Title>
       <Controller
-        name='email'
+        name="email"
         control={control}
-        defaultValue=''
+        defaultValue=""
         render={({ field }) => (
           <TextField
-            margin='dense'
-            variant='outlined'
-            label='Email'
+            margin="dense"
+            variant="outlined"
+            label="Email"
             error={Boolean(errors.email)}
             helperText={errors.email?.message}
             {...field}
@@ -35,15 +48,15 @@ function Signin() {
         )}
       />
       <Controller
-        name='password'
+        name="password"
         control={control}
-        defaultValue=''
+        defaultValue=""
         render={({ field }) => (
           <TextField
-            type='password'
-            margin='dense'
-            variant='outlined'
-            label='Senha'
+            type="password"
+            margin="dense"
+            variant="outlined"
+            label="Senha"
             error={Boolean(errors.password)}
             helperText={errors.password?.message}
             {...field}
@@ -52,20 +65,20 @@ function Signin() {
       />
 
       <Button
-        type='submit'
-        variant='contained'
-        color='primary'
+        type="submit"
+        variant="contained"
+        color="primary"
         style={{ marginTop: '10px' }}
       >
         Entrar
       </Button>
     </Form>
-  )
+  );
 }
 
 const Title = styled.h2`
   align-self: center;
-`
+`;
 
 const Form = styled.form`
   display: flex;
@@ -74,6 +87,6 @@ const Form = styled.form`
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 1rem;
-`
+`;
 
-export default Signin
+export default Signin;

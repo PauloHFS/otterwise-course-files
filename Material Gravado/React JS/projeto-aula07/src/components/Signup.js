@@ -1,32 +1,46 @@
-import { useForm, Controller } from 'react-hook-form'
-import styled from 'styled-components'
-import { TextField, Button } from '@material-ui/core'
-import { yupResolver } from '@hookform/resolvers/yup'
+import { useHistory } from 'react-router-dom';
 
-import { signupSchema } from '../schemas/auth'
+import { useForm, Controller } from 'react-hook-form';
+import styled from 'styled-components';
+import { TextField, Button } from '@material-ui/core';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+import { signupSchema } from '../schemas/auth';
+
+import { useContext } from 'react';
+import { AuthContext } from '../context/authContext';
 
 function Signup() {
+  let history = useHistory();
+
+  const { isAuthenticated, singin } = useContext(AuthContext);
+
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(signupSchema),
-  })
-  const handleSignup = data => console.log('sigup: ', data)
+  });
+
+  const handleSignup = data => {
+    console.log('sigup: ', data);
+    singin(data.email, data.password);
+    if (isAuthenticated) history.push('/dashboard');
+  };
 
   return (
     <Form onSubmit={handleSubmit(handleSignup)}>
       <Title>Cadastro</Title>
       <Controller
-        name='email'
+        name="email"
         control={control}
-        defaultValue=''
+        defaultValue=""
         render={({ field }) => (
           <TextField
-            margin='dense'
-            variant='outlined'
-            label='Email'
+            margin="dense"
+            variant="outlined"
+            label="Email"
             error={Boolean(errors.email)}
             helperText={errors.email?.message}
             {...field}
@@ -34,15 +48,15 @@ function Signup() {
         )}
       />
       <Controller
-        name='password'
+        name="password"
         control={control}
-        defaultValue=''
+        defaultValue=""
         render={({ field }) => (
           <TextField
-            type='password'
-            margin='dense'
-            variant='outlined'
-            label='Senha'
+            type="password"
+            margin="dense"
+            variant="outlined"
+            label="Senha"
             error={Boolean(errors.password)}
             helperText={errors.password?.message}
             {...field}
@@ -50,15 +64,15 @@ function Signup() {
         )}
       />
       <Controller
-        name='passwordConfirm'
+        name="passwordConfirm"
         control={control}
-        defaultValue=''
+        defaultValue=""
         render={({ field }) => (
           <TextField
-            type='password'
-            margin='dense'
-            variant='outlined'
-            label='Confirme a Senha'
+            type="password"
+            margin="dense"
+            variant="outlined"
+            label="Confirme a Senha"
             error={Boolean(errors.passwordConfirm)}
             helperText={errors.passwordConfirm?.message}
             {...field}
@@ -66,20 +80,20 @@ function Signup() {
         )}
       />
       <Button
-        type='submit'
-        variant='contained'
-        color='primary'
+        type="submit"
+        variant="contained"
+        color="primary"
         style={{ marginTop: '10px' }}
       >
         Cadastrar
       </Button>
     </Form>
-  )
+  );
 }
 
 const Title = styled.h2`
   align-self: center;
-`
+`;
 
 const Form = styled.form`
   display: flex;
@@ -88,6 +102,6 @@ const Form = styled.form`
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 1rem;
-`
+`;
 
-export default Signup
+export default Signup;
