@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Button } from '@material-ui/core';
 
+import { toast } from 'react-toastify';
+
 import { useContext } from 'react';
 import { AuthContext } from '../context/authContext';
 
@@ -10,6 +12,15 @@ function Tasks() {
   const handleLogout = () => {
     console.log('logout');
     singout();
+    toast('👋Até mais!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (

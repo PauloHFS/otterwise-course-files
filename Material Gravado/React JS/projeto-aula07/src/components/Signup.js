@@ -1,5 +1,7 @@
 import { useHistory } from 'react-router-dom';
 
+import { toast } from 'react-toastify';
+
 import { useForm, Controller } from 'react-hook-form';
 import styled from 'styled-components';
 import { TextField, Button } from '@material-ui/core';
@@ -13,7 +15,7 @@ import { AuthContext } from '../context/authContext';
 function Signup() {
   let history = useHistory();
 
-  const { isAuthenticated, singin } = useContext(AuthContext);
+  const { singin } = useContext(AuthContext);
 
   const {
     control,
@@ -26,7 +28,16 @@ function Signup() {
   const handleSignup = data => {
     console.log('sigup: ', data);
     singin(data.email, data.password);
-    if (isAuthenticated) history.push('/dashboard');
+    history.push('/dashboard');
+    toast('🔥Cadastrado com sucesso!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (

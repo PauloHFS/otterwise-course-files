@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { toast } from 'react-toastify';
+
 import { useForm, Controller } from 'react-hook-form';
 import styled from 'styled-components';
 import { TextField, Button } from '@material-ui/core';
@@ -13,7 +15,7 @@ import { AuthContext } from '../context/authContext';
 function Signin() {
   let history = useHistory();
 
-  const { isAuthenticated, login } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
 
   const {
     control,
@@ -26,7 +28,16 @@ function Signin() {
   const handleSignin = data => {
     console.log('sigin: ', data);
     login(data.email, data.password);
-    if (isAuthenticated) history.push('/dashboard');
+    history.push('/dashboard');
+    toast('👌Logado com sucesso!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (
