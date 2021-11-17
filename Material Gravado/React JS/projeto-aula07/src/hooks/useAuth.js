@@ -3,19 +3,21 @@ import { useState } from 'react';
 const useAuth = () => {
   const [isAuthenticated, setAuthentication] = useState(false);
 
-  const login = (email, senha) => {
-    /*  const { credenciais } = JSON.stringify(localStorage.getItem('credenciais'));
+  const login = (email, senha, callback) => {
+    let credenciais = localStorage.getItem('credenciais');
+    credenciais = JSON.parse(credenciais);
 
-    for (let i = 0; i < credenciais.length; i++) {
-      const { email: login, senha: password } = credenciais[i];
-      if (email === login && senha === password) {
-        setAuthentication(true);
+    const isCadastrado = credenciais.some(
+      ({ email: login, senha: password }) => {
+        return login === email && password === senha;
       }
-    } */
-    if (localStorage.getItem(email) === senha) {
+    );
+
+    if (isCadastrado) {
       setAuthentication(true);
-      console.log('LOGADO');
     }
+
+    callback(isCadastrado);
   };
 
   const singout = () => {
@@ -24,16 +26,16 @@ const useAuth = () => {
   };
 
   const singin = (email, senha) => {
-    /* const { credenciais } = JSON.parse(localStorage.getItem('credenciais'));
+    let credenciais = localStorage.getItem('credenciais');
 
+    credenciais = JSON.parse(credenciais);
     credenciais.push({ email: email, senha: senha });
+    credenciais = JSON.stringify(credenciais);
 
-    localStorage.setItem('credenciais', JSON.stringify({ credenciais }));
-     */
+    console.log(credenciais);
 
-    localStorage.setItem(email, senha);
+    localStorage.setItem('credenciais', credenciais);
     setAuthentication(true);
-    console.log('CADASTRADO');
   };
 
   return { isAuthenticated, login, singout, singin };

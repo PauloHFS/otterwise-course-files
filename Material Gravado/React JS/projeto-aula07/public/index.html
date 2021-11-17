@@ -30,6 +30,12 @@
     />
     <link rel="stylesheet" href="global.css" />
     <title>App</title>
+
+    <script>
+      window.onload = () => {
+        localStorage.setItem('credenciais', JSON.stringify([]));
+      };
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

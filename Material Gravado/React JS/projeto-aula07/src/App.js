@@ -14,7 +14,7 @@ import useAuth from './hooks/useAuth';
 
 function App() {
   return (
-    <AuthContext.Provider value={useAuth()}>
+    <>
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -28,15 +28,17 @@ function App() {
       />
       {/* Same as */}
       <ToastContainer />
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <PrivateRoute>
-            <Route path="/dashboard" component={Dashboard} />
-          </PrivateRoute>
-        </Switch>
-      </BrowserRouter>
-    </AuthContext.Provider>
+      <AuthContext.Provider value={useAuth()}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <PrivateRoute>
+              <Route path="/dashboard" component={Dashboard} />
+            </PrivateRoute>
+          </Switch>
+        </BrowserRouter>
+      </AuthContext.Provider>
+    </>
   );
 }
 

@@ -28,7 +28,6 @@ function Signup() {
   const handleSignup = data => {
     console.log('sigup: ', data);
     singin(data.email, data.password);
-    history.push('/dashboard');
     toast('🔥Cadastrado com sucesso!', {
       position: 'top-right',
       autoClose: 5000,
@@ -38,6 +37,7 @@ function Signup() {
       draggable: true,
       progress: undefined,
     });
+    history.push('/dashboard');
   };
 
   return (

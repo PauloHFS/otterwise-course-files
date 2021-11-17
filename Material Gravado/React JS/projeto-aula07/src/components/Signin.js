@@ -27,16 +27,23 @@ function Signin() {
 
   const handleSignin = data => {
     console.log('sigin: ', data);
-    login(data.email, data.password);
-    history.push('/dashboard');
-    toast('👌Logado com sucesso!', {
-      position: 'top-right',
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
+    login(data.email, data.password, isCadastrado => {
+      let msg;
+      if (isCadastrado) {
+        msg = '🔥Logado com sucesso!';
+      } else {
+        msg = '🛑Login não efetuado! Usuario não está cadastrado!';
+      }
+      toast(msg, {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      if (isCadastrado) history.push('/dashboard');
     });
   };
 
