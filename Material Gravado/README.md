@@ -29,8 +29,8 @@
 - Aula 1 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/React%20JS/projeto-aula01)
 - Aula 2 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/React%20JS/projeto-aula02)
 - Aula 3 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/React%20JS/projeto-aula03)
-- Aula 4 - Exercícios
-- Aula 5 - Exercícios
-- Aula 6 - Exercícios
-- Aula 7 - Exercícios
-- Desafio
+- Aula 4 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/React%20JS/projeto-aula04)
+- Aula 5 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/React%20JS/projeto-aula05)
+- Aula 6 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/React%20JS/projeto-aula06)
+- Aula 7 - [Exercícios](https://github.com/PauloHFS/otterwise-course-files/tree/main/React%20JS/projeto-aula07)
+- [Desafio](https://github.com/PauloHFS/to-do)
