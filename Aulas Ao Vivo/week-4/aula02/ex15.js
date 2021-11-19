@@ -12,129 +12,118 @@ objetos, faça um programa que resolva o problema do dono da livraria.
 ----------------------------------------------------------------------------
 ● Autor do livro mais vendido;
 */
-function getBookMaisVendido(books) {
-  let indexBookMaisVendido = 0;
+const getBookMaisVendido = books => {
+  return books.reduce((bookMaisVendido, book) => {
+    let bookMV = bookMaisVendido;
 
-  for (let index = 1; index < books.length; index++) {
-    if (index == books.lenght - 1) continue;
-    if (
-      books[index].quantidadeVendido >
-      books[indexBookMaisVendido].quantidadeVendido
-    ) {
-      indexBookMaisVendido = index;
+    if (book.quantidadeVendido > bookMV.quantidadeVendido) {
+      bookMV = book;
     }
-  }
 
-  return books[indexBookMaisVendido];
-}
+    return bookMV;
+  }, books[0]);
+};
 
 /* 
 ----------------------------------------------------------------------------
 ● Filtrar livros que tem um preço abaixo do valor que será inserido;
 */
-function getBooksUnder(price, books) {
-  let booksUnderPriced = [];
+const getBooksUnder = (price, books) => {
+  return books.reduce((BooksUnder, book) => {
+    const nextBooksUnder = [...BooksUnder];
 
-  for (let index = 0; index < books.length; index++) {
-    if (books[index].valor < price) {
-      booksUnderPriced.push(books[index]);
+    if (book.valor < price) {
+      nextBooksUnder.push(book);
     }
-  }
 
-  return booksUnderPriced;
-}
+    return nextBooksUnder;
+  }, []);
+};
 
 /* 
 ----------------------------------------------------------------------------
 ● Filtrar livros que tem um preço acima do valor que será inserido;
 */
-function getBooksOver(price, books) {
-  let booksOverPriced = [];
+const getBooksOver = (price, books) => {
+  return books.reduce((BooksOverPriced, book) => {
+    const nextBooksOverPriced = [...BooksOverPriced];
 
-  for (let index = 0; index < books.length; index++) {
-    if (books[index].valor > price) {
-      booksOverPriced.push(books[index]);
+    if (book.valor > price) {
+      nextBooksOverPriced.push(book);
     }
-  }
 
-  return booksOverPriced;
-}
+    return nextBooksOverPriced;
+  }, []);
+};
 
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-function getBookBy(atribute, value, books) {
-  let book = {};
-  for (let index = 0; index < books.length; index++) {
-    if (books[index][atribute] == value) {
-      book = books[index];
-      break;
+const getBookBy = (atribute, value, books) => {
+  return books.reduce((acc, book) => {
+    let wantedBook = acc;
+
+    if (book[atribute] == value) {
+      wantedBook = book;
     }
-  }
-  return book;
-}
+
+    return wantedBook;
+  }, {});
+};
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 /* 
 ----------------------------------------------------------------------------
 ● Pesquisa pelo nome do livro;
 */
-
+const getBookByName = (nome, books) => {
+  return getBookBy('nome', nome, books);
+};
 /* 
 ----------------------------------------------------------------------------
 ● Pesquisa pelo autor do livro;
  */
-
+const getBookByAutor = (autor, books) => {
+  return getBookBy('autor', autor, books);
+};
 /* 
 ----------------------------------------------------------------------------
 ● Pesquisa pelo código do livro;
  */
-
+const getBookByCod = (cod, books) => {
+  return getBookBy('cod', cod, books);
+};
 /* 
 ----------------------------------------------------------------------------
 ● Lista do Estoque;
  */
-
+const getEstoque = books => books;
 /* 
 ----------------------------------------------------------------------------
 ● Top X livros mais vendidos (X será um valor inserido como entrada);
 */
-function top(X, books) {
-  function bubbleSort(arr, atribute, comparador) {
-    hadSwap = true;
-    while (hadSwap) {
-      hadSwap = false;
-      for (let index = 0; index < arr.length; index++) {
-        if (index == arr.length - 1) continue;
-        if (comparador(arr[index][atribute], arr[index + 1][atribute]) == 1) {
-          [arr[index], arr[index + 1]] = [arr[index + 1], arr[index]];
-          hadSwap = true;
-        }
-      }
-    }
-  }
+const booksTop = (X, books) => {
+  return books
+    .sort(({ quantidadeVendido: a }, { quantidadeVendido: b }) => b - a)
+    .reduce((topX, book) => {
+      if (topX.length === X) return topX;
 
-  let booksOrdenadoVendas = [...books];
-  bubbleSort(booksOrdenadoVendas, 'quantidadeVendido', (a, b) => a < b);
+      let nextTopX = [...topX];
 
-  let topBooks = [];
-  for (let index = 0; index < X; index++) {
-    topBooks.push(booksOrdenadoVendas[index]);
-  }
+      nextTopX.push(book);
 
-  return topBooks;
-}
+      return nextTopX;
+    }, []);
+};
 
 /* 
 ----------------------------------------------------------------------------
 ● Aumento de X % no preço dos livros (X será um valor inserido como entrada).
 */
-function changeBooksPriceIn(rate, books) {
+const changeBooksPriceIn = (rate, books) => {
   let fixedRate = rate / 100 + 1;
-  let booksWithNewPrice = [...books];
-  for (let index = 0; index < booksWithNewPrice.length; index++) {
-    booksWithNewPrice[index].valor *= fixedRate;
-  }
-  return booksWithNewPrice;
-}
+  return books.map(({ valor, ...book }) => {
+    return { ...book, valor: (valor *= fixedRate) };
+  });
+};
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 const books = [
@@ -220,35 +209,37 @@ const books = [
 const testes = [
   { text: '● Autor do livro mais vendido;', result: getBookMaisVendido(books) },
   {
-    text: '● Filtrar livros que tem um preço abaixo do valor que será inserido;',
+    text: '● Filtrar livros que tem um preço abaixo do valor que será inserido; 45',
     result: getBooksUnder(45, books),
   },
   {
-    text: '● Filtrar livros que tem um preço acima do valor que será inserido;',
+    text: '● Filtrar livros que tem um preço acima do valor que será inserido; 45',
     result: getBooksOver(45, books),
   },
   {
-    text: '● Pesquisa pelo nome do livro;',
-    result: getBookBy('nome', 'antifragil', books),
+    text: '● Pesquisa pelo nome do livro; antifragil',
+    result: getBookByName('antifragil', books),
   },
   {
-    text: '● Pesquisa pelo autor do livro;',
-    result: getBookBy('cod', '8547001085', books),
+    text: '● Pesquisa pelo autor do livro; 8547001085',
+    result: getBookByCod('8547001085', books),
   },
   {
-    text: '● Pesquisa pelo código do livro;',
-    result: getBookBy('autor', 'Nassim Nicholas Taleb', books),
+    text: '● Pesquisa pelo código do livro; Nassim Nicholas Taleb',
+    result: getBookByAutor('Nassim Nicholas Taleb', books),
   },
-  { text: '● Lista do Estoque;', result: books },
+  { text: '● Lista do Estoque;', result: getEstoque(books) },
   {
-    text: '● Top X livros mais vendidos (X será um valor inserido como entrada);',
+    text: '● Top X livros mais vendidos (X será um valor inserido como entrada); 10',
+    result: booksTop(10, books),
   },
   {
-    text: '● Aumento de X % no preço dos livros (X será um valor inserido como entrada).',
+    text: '● Aumento de X % no preço dos livros (X será um valor inserido como entrada). 100',
     result: changeBooksPriceIn(100, books),
   },
 ];
 
-/* testes.forEach(({text, result} => {
-
-})) */
+testes.forEach(({ text, result }) => {
+  console.log(`----------------------------------------\n${text}`);
+  console.table(result);
+});
