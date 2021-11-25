@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "ketchup", "preco": "R$15,9" },
+  { "id": 2, "name": "mostarda", "preco": "R$15,9" },
+  { "id": 3, "name": "batata", "preco": "R$4,85" },
+  { "id": 4, "name": "cebola", "preco": "R$3,15" }
+]
