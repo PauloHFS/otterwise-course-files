@@ -15,7 +15,10 @@ const dataJSON = data.reduce((dataJSON, csvLine, index) => {
     newDataJSON.push({
       [columns[0]]: Number.parseInt(id),
       [columns[1]]: name,
-      [columns[2]]: `R$${preco.replace('.', ',')}`,
+      [columns[2]]: `R$${Number.parseFloat(preco).toFixed(2)}`.replace(
+        '.',
+        ','
+      ),
     });
   }
   return newDataJSON;
