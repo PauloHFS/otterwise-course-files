@@ -1,0 +1,74 @@
+[
+  { "erro": true },
+  {
+    "type": "system",
+    "errno": "ETIMEDOUT",
+    "code": "ETIMEDOUT",
+    "erroredSysCall": "connect"
+  },
+  { "erro": true },
+  { "erro": true },
+  { "erro": true },
+  {
+    "type": "system",
+    "errno": "ETIMEDOUT",
+    "code": "ETIMEDOUT",
+    "erroredSysCall": "connect"
+  },
+  {
+    "cep": "29052-240",
+    "logradouro": "Rua Desembargador Lourival de Almeida",
+    "complemento": "",
+    "bairro": "Praia do Suá",
+    "localidade": "Vitória",
+    "uf": "ES",
+    "ibge": "3205309",
+    "gia": "",
+    "ddd": "27",
+    "siafi": "5705"
+  },
+  {
+    "type": "system",
+    "errno": "ETIMEDOUT",
+    "code": "ETIMEDOUT",
+    "erroredSysCall": "connect"
+  },
+  { "erro": true },
+  { "erro": true },
+  { "erro": true },
+  { "erro": true },
+  {
+    "type": "system",
+    "errno": "ETIMEDOUT",
+    "code": "ETIMEDOUT",
+    "erroredSysCall": "connect"
+  },
+  {
+    "type": "system",
+    "errno": "ETIMEDOUT",
+    "code": "ETIMEDOUT",
+    "erroredSysCall": "connect"
+  },
+  {
+    "cep": "29027-132",
+    "logradouro": "Praça Genoveva Machado",
+    "complemento": "",
+    "bairro": "do Quadro",
+    "localidade": "Vitória",
+    "uf": "ES",
+    "ibge": "3205309",
+    "gia": "",
+    "ddd": "27",
+    "siafi": "5705"
+  },
+  { "erro": true },
+  { "erro": true },
+  {
+    "type": "system",
+    "errno": "ETIMEDOUT",
+    "code": "ETIMEDOUT",
+    "erroredSysCall": "connect"
+  },
+  { "erro": true },
+  { "erro": true }
+]
