@@ -1,0 +1,59 @@
+/* 
+Com base na página construída no último exercício, vamos começar a dar vida a ela.
+
+1. Crie um arquivo chamado styles.css e incorpore as suas páginas html;
+2. Mude a cor do fundo das páginas para a cor antiquewhite.
+3. Os links da navegação devem ter a cor do texto branca, 
+  deve ser removido o sublinhado, o alinhamento do texto 
+  deve ser centralizado, o espaçamento interno em todas as 
+  direções de 5px e cor de fundo darkcyan.
+4. Padronize o tamanho das fontes para 12px (menos os títulos (h’s)). 
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  background-color: antiquewhite;
+}
+
+p,
+a {
+  font-size: 12px;
+}
+
+header,
+nav,
+main,
+figure {
+  padding: 2vh 10vw;
+  /* display: flex;
+  flex-flow: column wrap;
+  align-items: center; */
+}
+
+/* nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+} */
+
+nav {
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li a {
+  padding: 5px;
+  margin: 0;
+  background-color: darkcyan;
+  color: white;
+  text-decoration: none;
+}
+
+main section {
+  padding-bottom: 5vh;
+  width: 100%;
+}
