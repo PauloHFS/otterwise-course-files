@@ -1,0 +1,34 @@
+main {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+div {
+  height: 200px;
+  width: 100%;
+
+  outline: dotted red;
+}
+
+div p {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  div p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  main {
+    flex-flow: row nowrap;
+  }
+  div {
+    flex: 1;
+  }
+
+  div p {
+    font-size: 18px;
+  }
+}
