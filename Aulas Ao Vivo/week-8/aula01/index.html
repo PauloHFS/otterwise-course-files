@@ -1,0 +1,65 @@
+<!-- 
+Crie uma página HTML com um formulário para cadastro de pessoas. Essa página terá duas seções: 
+uma primeira explicativa, com o título e a descrição da página (textos de sua escolha) e uma 
+segunda com o formulário. O título da página na aba do navegador deve ser o mesmo título da página.
+
+No formulário tente sempre utilizar o tipo do elemento que mais se encaixa no valor que ele irá receber, 
+utilize também outros atributos como placeholder para um resultado final mais robusto. O formulário deve 
+conter os seguintes campos:
+
+Nome
+Email
+Data de Nascimento
+Linguagem Favorita com as opções JS e Basic
+Botão de enviar 
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Cadastro de Dev</title>
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <h1 class="header-title">Cadastro de Dev</h1>
+        <p class="header-description">
+          Cadastre-se para receber oportunidades de trabalho.
+        </p>
+      </header>
+      <section class="formulario">
+        <form class="formulario-form">
+          <label for="nome">Nome</label>
+          <input type="text" name="nome" placeholder="Fulano de Tal" />
+
+          <label for="email">E-mail</label>
+          <input type="email" name="email" placeholder="fulano@email.com" />
+
+          <label for="data-nascimento">Data de Nascimento</label>
+          <input type="date" name="data-nascimento" />
+
+          <fieldset id="linguagem">
+            <legend>Linguagem Favorita</legend>
+
+            <label>
+              <input type="radio" value="JavaScript" name="linguagem" />
+              JavaScript
+            </label>
+
+            <label>
+              <input type="radio" value="Basic" name="linguagem" /> Basic
+            </label>
+          </fieldset>
+
+          <input type="submit" value="Enviar" />
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

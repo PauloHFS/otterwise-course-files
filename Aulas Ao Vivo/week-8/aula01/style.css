@@ -1,0 +1,31 @@
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title {
+  width: 100%;
+}
+
+.formulario {
+  padding-top: 64px;
+}
+
+.formulario-form {
+  display: flex;
+  flex-flow: column wrap;
+  place-content: center;
+  align-items: flex-start;
+}
+
+.formulario-form input,
+.formulario-form fieldset {
+  margin-bottom: 16px;
+}
