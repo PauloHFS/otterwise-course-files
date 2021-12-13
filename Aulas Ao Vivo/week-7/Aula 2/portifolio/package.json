@@ -1,0 +1,14 @@
+{
+  "name": "paulohfs.github.io",
+  "version": "1.0.0",
+  "license": "MIT",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.1",
+    "parcel": "^2.0.1"
+  }
+}
