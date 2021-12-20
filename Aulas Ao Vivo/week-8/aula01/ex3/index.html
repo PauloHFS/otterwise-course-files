@@ -1,0 +1,42 @@
+<!-- 
+1. Crie uma página que calcula a operação selecionada entre dois números e mostre na página o 
+resultado. No início da página deve haver um título e uma descrição da página. O formulário 
+possui três campos e um botão de enviar. Os dois primeiros campos recebem números e o terceiro 
+campo é um select com as opções: Dividir, Somar, Subtrair e Multiplicar. Após o formulário deve 
+haver um elemento mostrando o resultado.
+ -->
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Calculadora</h1>
+        <p>Realize operações matemáticas!</p>
+      </header>
+      <section>
+        <div id="calculadora">
+          <input type="number" />
+          <input type="number" />
+          <select>
+            <option value="somar">Somar</option>
+            <option value="subtrair">Subtrair</option>
+            <option value="multiplicar">Multiplicar</option>
+            <option value="dividir">Dividir</option>
+          </select>
+          <button>Calcular</button>
+        </div>
+        <div id="resultados"></div>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
