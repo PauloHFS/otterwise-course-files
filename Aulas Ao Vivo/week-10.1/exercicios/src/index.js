@@ -1,14 +1,22 @@
+import fs from 'fs';
+
 import {
   getUser,
   getUserPosts,
   getPostComments,
-} from './provider/placeholderApi.js';
+} from './providers/placeholderApi.js';
+
+console.log('-- Iniciando as requisições espere 1 minuto --');
 
 /* Questão 1 */
-console.log(await getUserPosts(2));
+try {
+  fs.writeFileSync('questao1.json', JSON.stringify(await getUserPosts(2)));
+  console.log('Questão 1 salva no arquivo JSON');
+} catch (error) {
+  console.error(error);
+}
 
 /* Questão 2 */
-
 const user_info = await getUser(1);
 
 const posts = await getUserPosts(1);
@@ -22,4 +30,9 @@ const posts_and_comments = await Promise.all(
 
 const user_data = { ...user_info, posts: posts_and_comments };
 
-console.dir(user_data);
+try {
+  fs.writeFileSync('questao2.json', JSON.stringify(user_data));
+  console.log('Questão 2 salva no arquivo JSON');
+} catch (error) {
+  console.error(error);
+}

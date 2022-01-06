@@ -12,7 +12,7 @@ const data = async route => {
   }
 };
 
-const getUser = userId => data(`/user/${userId}`);
+const getUser = userId => data(`/users/${userId}`);
 
 const getUserPosts = userId => data(`/posts?userId=${userId}`);
 
