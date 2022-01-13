@@ -10,7 +10,7 @@
 - Semana 7
 - Semana 8
 - Semana 9
-- Semana Revisão
+- Semana de Revisão
 - Semana 10
 
-### [Material Gravado](https://github.com/PauloHFS/otterwise-course-files/tree/main/Material%20Gravado)
+### [Material Gravado](https://github.com/PauloHFS/otterwise-course-files/tree/main/Material%20Gravado#readme)
