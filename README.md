@@ -13,4 +13,4 @@
 - Semana Revisão
 - Semana 10
 
-### (Material Gravado)[https://github.com/PauloHFS/otterwise-course-files/tree/main/Material%20Gravado]
+### [Material Gravado](https://github.com/PauloHFS/otterwise-course-files/tree/main/Material%20Gravado)
