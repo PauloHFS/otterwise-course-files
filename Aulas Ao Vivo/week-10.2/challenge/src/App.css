@@ -1,0 +1,38 @@
+.main {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input__large {
+  width: 360px;
+}
+
+.button {
+  font-weight: bold;
+}
+
+.button__large {
+  height: 240px;
+  width: 360px;
+  font-size: 64px;
+}
+
+.button__gray {
+  background-color: gray;
+}
+
+.button__yellow {
+  background-color: yellow;
+}
+
+.button__red {
+  background-color: red;
+}
+
+.button__green {
+  background-color: green;
+}
