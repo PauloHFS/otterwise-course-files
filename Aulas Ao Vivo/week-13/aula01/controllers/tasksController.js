@@ -5,6 +5,19 @@ export const index = async () => {
   return allTasks;
 };
 
+export const show = async (req, reply) => {
+  const task = await prisma.user.findUnique({
+    where: {
+      id: +req.params.id,
+    },
+  });
+
+  if (!task) {
+    reply.status(404).send('Task não encontrado');
+  }
+  return task;
+};
+
 /* export const create = async (req, reply) => {
   const { titulo, descricao } = req.body;
   const user = await prisma.user.create({
@@ -20,17 +33,3 @@ export const index = async () => {
   });
   reply.send(user);
 }; */
-
-/* export const show = async (req, reply) => {
-  const user = await prisma.user.findUnique({
-    where: {
-      id: +req.params.id,
-    },
-  });
-
-  if (!user) {
-    reply.status(404).send('Usuário não encontrado');
-  }
-  return user;
-};
- */
