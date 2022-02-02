@@ -18,18 +18,22 @@ export const show = async (req, reply) => {
   return task;
 };
 
-/* export const create = async (req, reply) => {
+export const create = async (req, reply) => {
   const { titulo, descricao } = req.body;
-  const user = await prisma.user.create({
-    data: {
-      name,
-      email,
-      ...(postTitle && {
-        posts: {
-          create: { title: postTitle },
-        },
-      }),
-    },
-  });
-  reply.send(user);
-}; */
+
+  if (!titulo) {
+    reply
+      .status(400)
+      .send({ error: true, message: 'Task precisa de um titulo!' });
+  }
+
+  let data = { titulo };
+
+  if (descricao) {
+    data = { ...data, descricao };
+  }
+
+  const task = await prisma.tasks.create({ data });
+
+  reply.status(203).send(task);
+};
