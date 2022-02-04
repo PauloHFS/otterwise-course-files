@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 01</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <label for="title">title</label>
+      <input type="text" name="title" />
+      <label for="content">content</label>
+      <input type="text" name="content" />
+      <input type="file" name="cover" />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+  <script>
+    const form = document.querySelector('form');
+
+    form.onsubmit = async e => {
+      e.preventDefault();
+
+      try {
+        let response = await fetch('http://localhost:3000/posts', {
+          method: 'POST',
+          body: new FormData(form),
+        });
+
+        let result = await response.json();
+        console.log(result);
+      } catch (error) {
+        console.error('error: ', error);
+      }
+    };
+  </script>
+</html>
