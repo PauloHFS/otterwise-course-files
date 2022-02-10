@@ -1,22 +1,28 @@
-import * as UsersController from "../controllers/users-controller.js";
-import * as AuthController from "../controllers/auth-controller.js";
-import { validateRequest } from "../middlewares/auth.js";
+import * as UsersController from '../controllers/users-controller.js';
+import * as AuthController from '../controllers/auth-controller.js';
+import { validateRequest } from '../middlewares/auth.js';
 
 const routes = {
   getAllUsers: {
-    method: "GET",
-    url: "/users",
+    method: 'GET',
+    url: '/users',
     preHandler: [validateRequest],
     handler: UsersController.index,
   },
+  updateUser: {
+    method: 'PATCH',
+    url: '/users',
+    preHandler: [validateRequest],
+    handler: UsersController.update,
+  },
   signup: {
-    method: "POST",
-    url: "/signup",
+    method: 'POST',
+    url: '/signup',
     handler: AuthController.signup,
   },
   login: {
-    method: "POST",
-    url: "/login",
+    method: 'POST',
+    url: '/login',
     handler: AuthController.login,
   },
 };
